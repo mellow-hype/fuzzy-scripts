@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+mkdir source && cd source
+apt-get source extract
+cd libextractor-* 
+sudo apt-get install libtool
+CC=afl-clang-fast CXX=afl-clang-fast++ ./configure --disable-shared
+make clean all
