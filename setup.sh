@@ -27,7 +27,15 @@ echo "Done!"
 echo ""
 
 # other installs
-echo "[+] Installing gdb and some other useful packages..."
-sudo apt-get install -y yasm gdb git vim &> /dev/null
+echo "[+] Installing gdb and pwndbg..."
+sudo apt-get install -y gdb 
+git clone https://github.com/pwndbg/pwndbg.git
+cd pwndbg 
+./setup.sh
+echo "Done!"
+
+echo ""
+echo "[+] Installing some other tools in case they aren't already..."
+sudo apt-get install -y yasm vim git 
 echo "Done!"
 echo ""
