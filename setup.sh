@@ -3,7 +3,7 @@ base_dir=$pwd
 
 # update sources and install dependencies
 echo "[+] Installing dependencies and making config changes for afl..."
-sudo apt-get update
+sudo apt-get update && sudo apt-get -y upgrade
 sudo apt-get install -y clang-3.8 build-essential llvm-3.8-dev gnuplot-nox
 sudo update-alternatives --install /usr/bin/clang clang `which clang-3.8` 1
 sudo update-alternatives --install /usr/bin/clang++ clang++ `which clang++-3.8` 1
@@ -36,6 +36,6 @@ echo "Done!"
 
 echo ""
 echo "[+] Installing some other tools in case they aren't already..."
-sudo apt-get install -y yasm vim git 
+sudo apt-get install -y yasm vim git cmake autoconf libtool 
 echo "Done!"
 echo ""
