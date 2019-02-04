@@ -1,4 +1,6 @@
 import os
+import datetime
+curtime = datetime.datetime.now()
 output= "report/afl_report.html"
 if not os.path.exists(os.path.dirname(output)):
     try:
@@ -8,7 +10,9 @@ if not os.path.exists(os.path.dirname(output)):
             raise
 with open("afl_results.txt", "r") as report:
 	html = ""
-	html += "<html><body><div><p>"
+	html += "<html><body><div><p><br>"
+	html += str(curtime)
+	html += "<br>"
 	lines = report.readlines()
 	for line in lines:
 		html += "<br>"
